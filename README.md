@@ -222,6 +222,7 @@ If you have questions or need help integrating the editor please [contact us](ht
 
 
 
+
 ## Licensing
 
 All plugins would be restricted for an unlicensed version. To try out the full functionality, you’ll need to register for a trial license [here](https://froala.com/get-trial-key/), which is valid for a limited time.
