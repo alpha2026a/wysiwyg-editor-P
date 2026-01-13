@@ -192,6 +192,7 @@ At present, we officially aim to support the last two versions of the following 
 
 
 
+
 ## Resources
 
 - Demo: [www.froala.com/wysiwyg-editor](http://www.froala.com/wysiwyg-editor)
