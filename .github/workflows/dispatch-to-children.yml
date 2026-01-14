@@ -1,0 +1,47 @@
+name: Release & Dispatch to Child Repos
+ 
+on:
+  release:
+    types: [published]
+ 
+permissions:
+  contents: read
+ 
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      # --------------------------------------------
+      # Extract, normalize & validate version
+      # --------------------------------------------
+      - name: Extract version & release notes
+        run: |
+          VERSION="${{ github.event.release.tag_name }}"
+          VERSION="${VERSION#v}"
+          VERSION="${VERSION//,/\.}"
+ 
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid version format: $VERSION"
+            exit 1
+          fi
+ 
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "${{ github.event.release.body || '' }}" > release_notes.txt
+ 
+          echo "Dispatching version: $VERSION"
+ 
+      # --------------------------------------------
+      # Dispatch to Child-A (Rails)
+      # --------------------------------------------
+      - name: Dispatch to wysiwyg-rails-child-A
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: srkdev404-cyber/wysiwyg-rails  #use your repo
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
