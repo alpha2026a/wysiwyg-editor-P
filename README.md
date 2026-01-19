@@ -41,7 +41,6 @@ npm install froala-editor
 ```
 bower install froala-wysiwyg-editor
 ```
-
 ### Load from CDN
 Using Froala Editor from CDN is the easiest way to install it and we recommend using the jsDeliver CDN as it mirrors the NPM package. 
 
