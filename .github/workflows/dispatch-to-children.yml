@@ -34,11 +34,11 @@ jobs:
       # --------------------------------------------
       # Dispatch to Child-A (Rails)
       # --------------------------------------------
-      - name: Dispatch to wysiwyg-rails-child-A
+      - name: Dispatch to wysiwyg-rails-C
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT }}
-          repository: srkdev404-cyber/wysiwyg-rails  #use your repo
+          repository: alpha2026a/wysiwyg-rails-C  #use your repo
           event-type: version_update
           client-payload: |
             {
