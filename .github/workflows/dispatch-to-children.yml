@@ -45,3 +45,34 @@ jobs:
               "version": "${{ env.VERSION }}",
               "release_notes": ${{ toJson(github.event.release.body) }}
             }
+
+      # --------------------------------------------
+      # Dispatch to Child-B (Ruby)
+      # --------------------------------------------
+      - name: Dispatch to wysiwyg-editor-ruby-sdk-C2
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: alpha2026a/wysiwyg-editor-ruby-sdk-C2  #use your repo
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
+
+            
+      # --------------------------------------------
+      # Dispatch to Child-C (Wordpress)
+      # --------------------------------------------
+      - name: Dispatch to wordpress-froala-wysiwyg-C3
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: alpha2026a/wordpress-froala-wysiwyg-C3  #use your repo
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
