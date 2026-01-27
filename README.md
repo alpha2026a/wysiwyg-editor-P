@@ -37,7 +37,6 @@ npm install froala-editor
 ```
 
 ### Install from bower
-
 ```
 bower install froala-wysiwyg-editor
 ```
