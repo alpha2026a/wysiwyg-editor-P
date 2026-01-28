@@ -153,7 +153,6 @@ For more details on customizing the editor, please check the editor [documentati
 
 
 ## Use with your existing framework
-
 - Angular JS: https://github.com/froala/angular-froala
 - Angular 2: https://github.com/froala/angular2-froala-wysiwyg
 - Aurelia: https://github.com/froala/aurelia-froala-editor
