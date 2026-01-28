@@ -29,7 +29,6 @@ Froala WYSIWYG HTML Editor is one of the most powerful JavaScript rich text edit
 
 
 ## Download and Install Froala Editor
-
 ### Install from npm
 
 ```
