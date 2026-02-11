@@ -135,7 +135,6 @@ new FroalaEditor('#edit');
 ```
 
 
-
 ### Load Froala Editor as a transpiled ES6/UMD module
 Since Froala Editor supports ES6 (ESM - ECMAScript modules) and UMD (AMD, CommonJS), it can be also loaded as a module with the use of transpilers. E.g. Babel, Typescript. *The following examples presumes you are using npm to install froala-editor, see Download and install FroalaEditor for more details.*
 
