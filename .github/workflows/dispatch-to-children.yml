@@ -169,4 +169,34 @@ jobs:
               "version": "${{ env.VERSION }}",
               "release_notes": ${{ toJson(github.event.release.body) }}
             }
+
+      # --------------------------------------------
+      # Dispatch to Child-G (aurelia)
+      # --------------------------------------------
+      - name: Dispatch to aurelia-froala-editor-c10
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: alpha2026a/aurelia-froala-editor-c10
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
+
+      # --------------------------------------------
+      # Dispatch to Child-H (vue)
+      # --------------------------------------------
+      - name: Dispatch to vue-froala-wysiwyg-c11
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: alpha2026a/vue-froala-wysiwyg-c11
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
     
