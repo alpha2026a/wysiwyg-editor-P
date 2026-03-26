@@ -218,13 +218,29 @@ jobs:
 
 
       # --------------------------------------------
-      # Dispatch to Child-J (angular)
+      # Dispatch to Child-J (angular-wysiwyg)
       # --------------------------------------------
       - name: Dispatch to angular-froala-wysiwyg-c13
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT }}
           repository: alpha2026a/angular-froala-wysiwyg-c13
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
+
+
+      # --------------------------------------------
+      # Dispatch to Child-K (angular)
+      # --------------------------------------------
+      - name: Dispatch to angular-froala-c14
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: alpha2026a/angular-froala-c14
           event-type: version_update
           client-payload: |
             {
