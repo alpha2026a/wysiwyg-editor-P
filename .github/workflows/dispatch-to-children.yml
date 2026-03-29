@@ -262,3 +262,18 @@ jobs:
               "version": "${{ env.VERSION }}",
               "release_notes": ${{ toJson(github.event.release.body) }}
             }
+
+      # --------------------------------------------
+      # Dispatch to Child-M (Craft)
+      # --------------------------------------------
+      - name: Dispatch to Craft-3-Froala-WYSIWYG-c16
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: alpha2026a/Craft-3-Froala-WYSIWYG-c16
+          event-type: version_update
+          client-payload: |
+            {
+              "version": "${{ env.VERSION }}",
+              "release_notes": ${{ toJson(github.event.release.body) }}
+            }
