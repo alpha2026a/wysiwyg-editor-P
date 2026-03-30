@@ -280,7 +280,7 @@ jobs:
 
 
       # --------------------------------------------
-      # Dispatch to Child-M (Craft)
+      # Dispatch to Child-N (Cake)
       # --------------------------------------------
       - name: Dispatch to wysiwyg-cake-c17
         uses: peter-evans/repository-dispatch@v3
