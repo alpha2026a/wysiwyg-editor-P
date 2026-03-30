@@ -22,7 +22,7 @@ Froala WYSIWYG HTML Editor is one of the most powerful JavaScript rich text edit
 - Awesome [new features](https://wysiwyg-editor-roadmap.froala.com)
 ​
      
-## Demos
+## Demos 
 
 - **Basic demo**: https://www.froala.com/wysiwyg-editor
 - **Inline demo**: https://www.froala.com/wysiwyg-editor/inline
