@@ -204,11 +204,11 @@ jobs:
       # --------------------------------------------
       # Dispatch to Child-I (meteor)
       # --------------------------------------------
-      - name: Dispatch to meteor-froala-c12
+      - name: Dispatch to yii2-froala-editor-c12
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT }}
-          repository: alpha2026a/meteor-froala-c12
+          repository: alpha2026a/yii2-froala-editor-c12
           event-type: version_update
           client-payload: |
             {
